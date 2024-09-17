@@ -101,12 +101,12 @@
 	      <url>http://13.233.100.117:8081/repository/sonar-dev1/</url>
 	    </repository>
 	    
-	    <snapshotRepository>
+	   <!-- <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
 	      <url>http://13.212.71.229:9980/mithuntechnologies/repository/canarabank-release/</url>
 	    </snapshotRepository>
-	    
+	    -->
 	</distributionManagement>
 	
 	<build>
