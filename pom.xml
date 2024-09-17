@@ -104,7 +104,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.233.100.117:8081/repository/sonar-dev-snapshot/</url>
+	      <url>http://13.233.100.117:8081/repository/sonar-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
