@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Abhi Technologies Private Ltd. Ph No: +91-8217785849 Bengaluru,Karnataka,India</h1>
-<h1 align="center"> abhi Technologies- Very Good Training center for DevOps with AWS,Terraform & AWS Solution Architect & Terraform in Bangalore India.Teaching Real Time scnerios</h1>
+<h1 align="center"> Abhi Technologies- Very Good Training center for DevOps with AWS,Terraform & AWS Solution Architect & Terraform in Bangalore India.Teaching Real Time scnerios</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
