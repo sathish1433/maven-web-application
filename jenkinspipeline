@@ -1,0 +1,67 @@
+pipeline{
+
+agent any
+
+tools{
+maven 'maven3.9.9'
+}
+
+triggers {
+  pollSCM '* * * * *'
+}
+
+options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '1', numToKeepStr: '5')
+  timestamps()
+}
+
+
+stages{
+	  //fetch the github code
+	  stage('git checkout'){
+	  steps{
+	    git credentialsId: '8c8c5e46-ae4d-4f81-ad28-6c200d3fbefb', url: 'https://github.com/sathishyadava143/maven-web-application.git'
+	  }
+	  }
+	  
+	//build stage
+	stage('maven build'){
+	steps{
+	sh "mvn clean package"
+	}
+	}
+/*
+	//check code quality
+	stage('code quality'){
+	  steps{
+	    sh "mvn clean sonar:sonar"
+	  }
+	}
+	//push to artifactory
+	stage('code push'){
+	  steps{
+	    sh "mvn clean deploy"
+	  }
+	}
+	//war file to deploy on tomcat server
+	stage('Deployment'){
+	  steps{
+	    sshagent(['4737f250-498f-45fd-821a-5731cc39999c']) {
+   	    sh "scp -o StrictHostKeyChecking=no target/*.war ec2-user@13.232.96.144:/opt/apache-tomcat-9.0.94/webapps/"
+            }
+	  }
+	}
+*/	
+}
+post {
+	  always {
+	    emailext body: 'Build Over', subject: 'jenkins notification', to: 'sathishyadav532@gmail.com'
+	  }
+	  success {
+	    emailext body: 'build success', subject: 'jenkins notification', to: 'sathishyadav532@gmail.com'
+	  }
+	  failure {
+	    emailext body: 'build filure', subject: 'jenkins notification', to: 'sathishyadav532@gmail.com'
+	  }
+	}
+}
