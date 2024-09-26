@@ -47,21 +47,12 @@ stages{
             }
 	  }
 	}
-*/	
-}
-post {
-       // only triggered when blue or green sign
-       success {
-           slackSend ...
-       }
-       // triggered when red sign
-       failure {
-           slackSend ...
-       }
-       // trigger every-works
-       always {
-           slackSend ...
-       }
-    }
+*/
+	stage('slack notification'){
+	  steps{
+		slackSend channel: '#devops', color: 'green', message: 'success', teamDomain: 'abhitechnologies', tokenCredentialId: '7ce7bd90-07b8-4446-b144-129431ee85ba'
+	  }
+	}
+
 }
 }
