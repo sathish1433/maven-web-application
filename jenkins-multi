@@ -25,5 +25,5 @@ node
   }
   stage('build notification'){
       emailext body: 'hello build success', subject: 'test jenkins', to: 'sathishyadav532@gmail.com'
-  }/*
+  }*/
 }
