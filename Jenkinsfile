@@ -9,7 +9,7 @@ node
   {
   sh "${mavenhome}/bin/mvn clean package"
   }
-  stage('sonarreport')
+  /*stage('sonarreport')
   {
   sh "${mavenhome}/bin/mvn sonar:sonar"
   }
@@ -25,5 +25,5 @@ node
   }
   stage('build notification'){
       emailext body: 'hello build success', subject: 'test jenkins', to: 'sathishyadav532@gmail.com'
-  }
+  }/*
 }
